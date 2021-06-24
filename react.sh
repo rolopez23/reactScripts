@@ -1,15 +1,16 @@
-# Equivalent of dirname for 
+# Equivalent of dirname for node
 __dirname="$(CDPATH= cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+#create necessary variables
 name="$1"
 file="$name.jsx"
 touch $file
 class="false"
-echo $2
+#control flow
 if [ "${2}" == "--class" ] 
 then
   class="true"
 fi 
-echo $class
+#create file
 if [ "${class}" == "true" ];
 then
   contents="import React from 'react';
@@ -19,18 +20,17 @@ then
       super(props);
       this.state = {
         class: true
-      }
+      };
     }
 
     render() {
       return (
         <div>${name}</div>
-      )
+      );
     }
   }
 
-  export default ${name};
-  "
+  export default ${name};"
 else
   contents="import React from 'react';
 
@@ -41,7 +41,7 @@ else
     )
   } 
 
-  export default ${name};"
+export default ${name};"
 fi 
 
 echo "${contents}" > "$file"
