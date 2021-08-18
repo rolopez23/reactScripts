@@ -4,4 +4,4 @@
 If called with the --class flag it will create a class based component. 
 It creates a component compatible with webpack import export. 
 
-`setup.sh` is a full react generator in progress pulled and adapted from 
+`setup.sh` is a full react generator in progress pulled and adapted from a past [SEIR package](https://www.npmjs.com/package/deregt-to-react)
