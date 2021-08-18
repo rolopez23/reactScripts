@@ -3,15 +3,8 @@ __dirname="$(CDPATH= cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 #create necessary variables
 name="$1"
 file="$name.jsx"
-touch $file
-class="false"
 #control flow
 if [ "${2}" == "--class" ] 
-then
-  class="true"
-fi 
-#create file
-if [ "${class}" == "true" ];
 then
   contents="import React from 'react';
 
